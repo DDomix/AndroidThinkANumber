@@ -9,91 +9,103 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <!--
+            gravity: az elem gyermek elemei hogyan helyzekednek el
+            layout_gravity: az elem hol helyezkedik el
+                a szülő elemen belül
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/konnyugomb"
-            android:layout_weight="1"
-            android:text="Könnyű"
-            />
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/nehezgomb"
-            android:layout_weight="1"
-            android:text="Nehéz"
-            />
-
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Könnyű"
+                android:layout_weight="1"
+                android:id="@+id/btn_konnyu"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nehéz"
+                android:layout_weight="1"
+                android:id="@+id/btn_nehez"
+                />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <ImageView
+                android:id="@+id/image_hp1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart2" />
+
+            <ImageView
+                android:id="@+id/image_hp2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart2" />
+
+            <ImageView
+                android:id="@+id/image_hp3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart2" />
+
+            <ImageView
+                android:id="@+id/image_hp4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/heart2"
-                android:id="@+id/hp_1">
-            </ImageView>
+                android:visibility="gone"
+                />
             <ImageView
+                android:id="@+id/image_hp5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/heart2"
-                android:id="@+id/hp_2">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/heart2"
-                android:id="@+id/hp_3">
-            </ImageView>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/heart2"
-                android:id="@+id/hp_4">
-            </ImageView>
+                android:visibility="gone"
+                />
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gondoltam egy számra!"
-            android:textSize="30sp"
-            />
+            android:textSize="30sp" />
+
         <Button
+            android:id="@+id/btn_novel"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="+"
-            android:id="@+id/plus"
             android:background="@drawable/buttonbackround"
+            android:text="+" />
 
-            />
         <TextView
+            android:id="@+id/text_tippelt_szam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
-            android:textSize="30sp"
-            android:id="@+id/tippertek"
-            />
+            android:textSize="30sp" />
+
         <Button
+            android:id="@+id/btn_csokkent"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="-"
-            android:id="@+id/minus"
             android:background="@drawable/buttonbackround"
-            />
+            android:text="-" />
+
     </LinearLayout>
+
     <Button
+        android:id="@+id/btn_tipp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tippel"
         android:layout_alignParentBottom="true"
-        android:id="@+id/tippgomb"
-        />
+        android:text="TIPPEL" />
+
 </RelativeLayout>
