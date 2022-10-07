@@ -2,6 +2,8 @@ package com.example.thinkanumber;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private int gondolt;
     private int elet;
     private Random rnd;
+    private AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "A gondolt szám kisebb", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    //TODO:Győzelem
+                    builder.setTitle("Győzelem");
+                    builder.create().show();
                 }
             }
         });
@@ -84,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
         }
         eletek[elet].setImageResource(R.drawable.heart1);
         if (elet==0){
-            //TODO:Vereség
+            builder.setTitle("Vereség");
+            builder.create().show();
         }
     }
 
@@ -105,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         if (elet==0){
-            //TODO:Vereség
+            builder.setTitle("Vereség");
+            builder.create().show();
         }
     }
 
@@ -119,9 +125,32 @@ public class MainActivity extends AppCompatActivity {
         hp4 =findViewById(R.id.hp_4);
         eletek=new ImageView[]{hp1,hp2,hp3,hp4};
         tippertek=findViewById(R.id.tippertek);
-        tipp=1;
         rnd=new Random();
-        gondolt= rnd.nextInt(10)+1;
+        builder=new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Szeretne új játékot játszani?");
+        builder.setNegativeButton("Nem", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        builder.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ujJatek();
+            }
+        });
+        builder.setCancelable(false);
+        ujJatek();
+    }
+
+    private void ujJatek() {
+        tipp=1;
         elet=4;
+        gondolt= rnd.nextInt(10)+1;
+        tippertek.setText(String.valueOf(tipp));
+        for (ImageView iv:eletek){
+            iv.setImageResource(R.drawable.heart2);
+        }
     }
 }
