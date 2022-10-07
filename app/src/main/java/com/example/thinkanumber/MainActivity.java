@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private int elet;
     private Random rnd;
     private AlertDialog.Builder builder;
+    private Button nehezgomb;
+    private Button konnyugomb;
+    private AlertDialog.Builder jatekVegeBuilder;
+    private AlertDialog.Builder nehezsegDialogBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        konnyugomb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        nehezgomb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     private void eletcsokkent() {
@@ -123,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
         hp2 =findViewById(R.id.hp_2);
         hp3 =findViewById(R.id.hp_3);
         hp4 =findViewById(R.id.hp_4);
+        nehezgomb =findViewById(R.id.nehezgomb);
+        konnyugomb=findViewById(R.id.konnyugomb);
         eletek=new ImageView[]{hp1,hp2,hp3,hp4};
         tippertek=findViewById(R.id.tippertek);
         rnd=new Random();

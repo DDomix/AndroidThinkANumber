@@ -12,6 +12,27 @@
         android:orientation="vertical"
         android:gravity="center">
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/konnyugomb"
+            android:layout_weight="1"
+            android:text="Könnyű"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nehezgomb"
+            android:layout_weight="1"
+            android:text="Nehéz"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageView
@@ -46,10 +67,12 @@
             android:textSize="30sp"
             />
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:text="+"
             android:id="@+id/plus"
+            android:background="@drawable/buttonbackround"
+
             />
         <TextView
             android:layout_width="wrap_content"
@@ -59,10 +82,11 @@
             android:id="@+id/tippertek"
             />
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:text="-"
             android:id="@+id/minus"
+            android:background="@drawable/buttonbackround"
             />
     </LinearLayout>
     <Button
